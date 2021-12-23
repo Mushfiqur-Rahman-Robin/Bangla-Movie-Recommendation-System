@@ -2,7 +2,9 @@ import pickle
 import streamlit as st
 import requests
 import pandas as pd
-
+import razorpay
+from order import *
+import webbrowser
 
 import hashlib
 def make_hashes(password):
@@ -53,7 +55,7 @@ def recommend(movie):
 
 def main():
 
-	menu = ["Home","Login","SignUp"]
+	menu = ["Home","Login","SignUp", "Subscription", "Logout"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Home":
@@ -101,13 +103,20 @@ def main():
 						with col1:
 							st.text(recommended_movie_names[4])
 
+
 				elif task == "Profiles":
 					st.subheader("User Profiles")
 					user_result = view_all_users()
 					clean_db = pd.DataFrame(user_result,columns=["Username","Password"])
 					st.dataframe(clean_db)
+
+
 			else:
 				st.warning("Incorrect Username/Password")
+
+	elif choice == "Logout":
+					st.header("Thank you for using our application. Login again for more recommendations.")
+
 
 	elif choice == "SignUp":
 		st.subheader("Create New Account")
@@ -120,7 +129,70 @@ def main():
 			st.success("You have successfully created a valid Account")
 			st.info("Go to Login Menu to login")
 
+	elif choice == "Subscription":
+		#order()
+		orderid = order['id']
+		
 
+		fi = open('payment.html', 'w')
+
+		
+
+		message = '''<button id="rzp-button1">Proceed to Payment</button>
+		<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+		<script>
+		var options = {
+			"key": "XXXXXXXXXXXXXXX", // Enter the Key ID generated from the Dashboard
+			"name": "Payment system",
+			"description": "Test Transaction",
+			"image": "https://example.com/your_logo",
+			"order_id" : 'order_Iat6WS8A7CimaF'  , //#This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+			"handler": function (response){
+
+				console.log(
+				{
+				razorpay_payment_id : response.razorpay_payment_id,
+				razorpay_order_id : response.razorpay_order_id,
+				razorpay_signature : response.razorpay_signature
+				}
+			);
+				
+			},
+			"prefill": {
+				"name": "Mushfiqur Rahman",
+				"email": "mushfiq781@gmail.com",
+				"contact": "012345678910"
+			},
+
+			"theme": {
+				"color": "#3399cc"
+			}
+		};
+		var rzp1 = new Razorpay(options);
+		rzp1.on('payment.failed', function (response){
+				alert(response.error.code);
+				alert(response.error.description);
+				alert(response.error.source);
+				alert(response.error.step);
+				alert(response.error.reason);
+				alert(response.error.metadata.order_id);
+				alert(response.error.metadata.payment_id);
+		});
+		document.getElementById('rzp-button1').onclick = function(e){
+			rzp1.open();
+			e.preventDefault();
+		}
+		</script>'''
+
+
+		fi.write(message)
+		fi.close()
+		webbrowser.open_new_tab('payment.html')
+		st.header('Subscribe to this application for more recommendations. Choose your payment options from the payment gateway. To pay for subscription click the button below.')
+		st.button("Pay for subscription.")
+
+		print(orderid)
+		
 
 if __name__ == '__main__':
 	main()
