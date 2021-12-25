@@ -2,13 +2,13 @@ from key import keyid, keysecret
 
 import razorpay
 
-client = client = razorpay.Client(auth=(keyid, keysecret))
+client = razorpay.Client(auth=(keyid, keysecret))
 
 data = {
 
     'amount': 100*100,
     'currency': 'INR',
-    'receipt': 'paymentdone',
+    'receipt': 'Order_taken',
     'notes': {
         'name': 'mushfiq',
         'payment_for': 'subscription'
@@ -17,5 +17,7 @@ data = {
 }
 
 order = client.order.create(data=data)
-print(order)
+#print(order)
+
+
 
