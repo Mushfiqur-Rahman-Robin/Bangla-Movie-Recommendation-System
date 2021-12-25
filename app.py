@@ -8,6 +8,7 @@ import webbrowser
 import streamlit.components.v1 as stc
 import pandas as pd
 from paymentID import cursor, create_idtable
+import streamlit.components.v1 as components
 
 
 HTML_BANNER = """
@@ -163,11 +164,11 @@ def main():
 			st.info("Go to Login Menu to login")
 
 	elif choice == "Subscription":
-		fi = open('payment.html', 'r')
-		fi.close()
-		webbrowser.open_new_tab('payment.html')
+		fi = open('payment.html', 'r', encoding='utf-8')
+		source_code = fi.read() 
 		st.header('Subscribe to this application for more recommendations. Choose your payment options from the payment gateway. To pay for subscription click the button below.')
-		st.button("Pay for subscription.")
+		print(source_code)
+		components.html(source_code, height = 600)
 
 
 	elif choice == "Watch":
