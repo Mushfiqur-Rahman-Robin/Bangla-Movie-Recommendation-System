@@ -17,19 +17,19 @@ HTML_BANNER = """
     """
 
 from PIL import Image
-image0 = Image.open(r'.\Movie Covers\bangla_movie_recommendation_banner.jpg')
-image1 = Image.open(r'.\Movie Covers\Dhaka Dream.png')
-image2 = Image.open(r'.\Movie Covers\Rickshaw Girl.png')
-image3 = Image.open(r'.\Movie Covers\Khachar Bhitor Ochin Pakhi.png')
-image4 = Image.open(r'.\Movie Covers\The Broker.png')
-image5 = Image.open(r'.\Movie Covers\August 1975.png')
-image6 = Image.open(r'.\Movie Covers\Rehana Maryam Noor.png')
-image7 = Image.open(r'.\Movie Covers\Piprabidya.png')
-image8 = Image.open(r'.\Movie Covers\Goopy Gyne Bagha Byne.png')
-image9 = Image.open(r'.\Movie Covers\Paromitar Ekdin.png')
-image10 = Image.open(r'.\Movie Covers\Heerak Rajar Deshe.png')
-image11 = Image.open(r'.\Movie Covers\Pather Panchali.png')
-image12 = Image.open(r'.\Movie Covers\Padma Nadir Majhi.png')
+image0 = Image.open(r'Movie Covers/bangla_movie_recommendation_banner.jpg')
+image1 = Image.open(r'Movie Covers/Dhaka Dream.png')
+image2 = Image.open(r'Movie Covers/Rickshaw Girl.png')
+image3 = Image.open(r'Movie Covers/Khachar Bhitor Ochin Pakhi.png')
+image4 = Image.open(r'Movie Covers/The Broker.png')
+image5 = Image.open(r'Movie Covers/August 1975.png')
+image6 = Image.open(r'Movie Covers/Rehana Maryam Noor.png')
+image7 = Image.open(r'Movie Covers/Piprabidya.png')
+image8 = Image.open(r'Movie Covers/Goopy Gyne Bagha Byne.png')
+image9 = Image.open(r'Movie Covers/Paromitar Ekdin.png')
+image10 = Image.open(r'Movie Covers/Heerak Rajar Deshe.png')
+image11 = Image.open(r'Movie Covers/Pather Panchali.png')
+image12 = Image.open(r'Movie Covers/Padma Nadir Majhi.png')
 
 
 
@@ -73,8 +73,8 @@ def id_user(order_id,payment_id):
 
 
 def recommend(movie):
-    movies = pickle.load(open(r'.\movie_list.pkl','rb'))
-    similarity = pickle.load(open(r'.\similarity.pkl','rb'))
+    movies = pickle.load(open(r'movie_list.pkl','rb'))
+    similarity = pickle.load(open(r'similarity.pkl','rb'))
     index = movies[movies['title'] == movie].index[0]
     distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
     recommended_movie_names = []
@@ -111,8 +111,8 @@ def main():
 
 				if task == "Recommend":
 					st.header("Bangla Movie Recommendation System")
-					movies = pickle.load(open(r'.\movie_list.pkl','rb'))
-					similarity = pickle.load(open(r'.\similarity.pkl','rb'))
+					movies = pickle.load(open(r'movie_list.pkl','rb'))
+					similarity = pickle.load(open(r'similarity.pkl','rb'))
 					
 					movie_list = movies['title'].values
 					selected_movie = st.selectbox(
