@@ -4,6 +4,5 @@ sklearn
 nltk
 streamlit
 razorpay
-pickle
 pandas
 sqlite3
