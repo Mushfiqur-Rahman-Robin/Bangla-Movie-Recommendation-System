@@ -73,8 +73,8 @@ def id_user(order_id,payment_id):
 
 
 def recommend(movie):
-    movies = pickle.load(open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\movie_list.pkl','rb'))
-    similarity = pickle.load(open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\similarity.pkl','rb'))
+    movies = pickle.load(open(r'.\movie_list.pkl','rb'))
+    similarity = pickle.load(open(r'.\similarity.pkl','rb'))
     index = movies[movies['title'] == movie].index[0]
     distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
     recommended_movie_names = []
@@ -111,8 +111,8 @@ def main():
 
 				if task == "Recommend":
 					st.header("Bangla Movie Recommendation System")
-					movies = pickle.load(open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\movie_list.pkl','rb'))
-					similarity = pickle.load(open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\similarity.pkl','rb'))
+					movies = pickle.load(open(r'.\movie_list.pkl','rb'))
+					similarity = pickle.load(open(r'.\similarity.pkl','rb'))
 					
 					movie_list = movies['title'].values
 					selected_movie = st.selectbox(
