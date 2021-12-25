@@ -17,19 +17,19 @@ HTML_BANNER = """
     """
 
 from PIL import Image
-image0 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\bangla_movie_recommendation_banner.jpg')
-image1 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\Dhaka Dream.png')
-image2 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\Rickshaw Girl.png')
-image3 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\Khachar Bhitor Ochin Pakhi.png')
-image4 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\The Broker.png')
-image5 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\August 1975.png')
-image6 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\Rehana Maryam Noor.png')
-image7 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\Piprabidya.png')
-image8 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\Goopy Gyne Bagha Byne.png')
-image9 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\Paromitar Ekdin.png')
-image10 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\Heerak Rajar Deshe.png')
-image11 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\Pather Panchali.png')
-image12 = Image.open(r'C:\Users\USER\Desktop\Bangla-Movie-Recommendation-System\Movie Covers\Padma Nadir Majhi.png')
+image0 = Image.open(r'.\Movie Covers\bangla_movie_recommendation_banner.jpg')
+image1 = Image.open(r'.\Movie Covers\Dhaka Dream.png')
+image2 = Image.open(r'.\Movie Covers\Rickshaw Girl.png')
+image3 = Image.open(r'.\Movie Covers\Khachar Bhitor Ochin Pakhi.png')
+image4 = Image.open(r'.\Movie Covers\The Broker.png')
+image5 = Image.open(r'.\Movie Covers\August 1975.png')
+image6 = Image.open(r'.\Movie Covers\Rehana Maryam Noor.png')
+image7 = Image.open(r'.\Movie Covers\Piprabidya.png')
+image8 = Image.open(r'.\Movie Covers\Goopy Gyne Bagha Byne.png')
+image9 = Image.open(r'.\Movie Covers\Paromitar Ekdin.png')
+image10 = Image.open(r'.\Movie Covers\Heerak Rajar Deshe.png')
+image11 = Image.open(r'.\Movie Covers\Pather Panchali.png')
+image12 = Image.open(r'.\Movie Covers\Padma Nadir Majhi.png')
 
 
 
