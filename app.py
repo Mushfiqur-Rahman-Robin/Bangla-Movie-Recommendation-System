@@ -223,6 +223,5 @@ def main():
 					st.image(image12)
 					st.write("[Click to watch](https://www.imdb.com/title/tt0107767/)")
 
-
 if __name__ == '__main__':
 	main()
