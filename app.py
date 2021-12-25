@@ -179,53 +179,48 @@ def main():
 			result = id_user(orderID, paymentID)
 			if result:
 				st.success("Successfully entered.")
-				if "orderId" not in st.session_state:
-					st.session_state['order_id'] = 'order_IbBO4KKH8h62uZ'
 
-				if "paymentIid" not in st.session_state:
-					st.session_state['payment_id'] = 'pay_IbGUJ06KjiBu8r'
+				col1, col2, col3 = st.columns(3)
+				with col1:
+					st.image(image1)
+					st.write("[Click to watch](https://www.imdb.com/title/tt5331886/)")
+				with col2:
+					st.image(image2)
+					st.write("[Click to watch](https://www.imdb.com/title/tt4853244/)")
 
-					col1, col2, col3 = st.columns(3)
-					with col1:
-						st.image(image1)
-						st.write("[Click to watch](https://www.imdb.com/title/tt5331886/)")
-					with col2:
-						st.image(image2)
-						st.write("[Click to watch](https://www.imdb.com/title/tt4853244/)")
+				with col3:
+					st.image(image3)
+					st.write("[Click to watch](https://www.imdb.com/title/tt15756034/)")
+				with col1:
+					st.image(image4)
+					st.write("[Click to watch](https://www.imdb.com/title/tt15547790/)")
+				with col2:
+					st.image(image5)
+					st.write("[Click to watch](https://www.imdb.com/title/tt13770656/)")
 
-					with col3:
-						st.image(image3)
-						st.write("[Click to watch](https://www.imdb.com/title/tt15756034/)")
-					with col1:
-						st.image(image4)
-						st.write("[Click to watch](https://www.imdb.com/title/tt15547790/)")
-					with col2:
-						st.image(image5)
-						st.write("[Click to watch](https://www.imdb.com/title/tt13770656/)")
+				with col3:
+					st.image(image6)
+					st.write("[Click to watch](https://www.imdb.com/title/tt14775748/)")
+				with col1:
+					st.image(image7)
+					st.write("[Click to watch](https://www.imdb.com/title/tt3461908/)")
 
-					with col3:
-						st.image(image6)
-						st.write("[Click to watch](https://www.imdb.com/title/tt14775748/)")
-					with col1:
-						st.image(image7)
-						st.write("[Click to watch](https://www.imdb.com/title/tt3461908/)")
+				with col2:
+					st.image(image8)
+					st.write("[Click to watch](https://www.imdb.com/title/tt0063023/)")
+				with col3:
+					st.image(image9)
+					st.write("[Click to watch](https://www.imdb.com/title/tt0249866/)")
+				with col1:
+					st.image(image10)
+					st.write("[Click to watch](https://www.imdb.com/title/tt0080856/)")
 
-					with col2:
-						st.image(image8)
-						st.write("[Click to watch](https://www.imdb.com/title/tt0063023/)")
-					with col3:
-						st.image(image9)
-						st.write("[Click to watch](https://www.imdb.com/title/tt0249866/)")
-					with col1:
-						st.image(image10)
-						st.write("[Click to watch](https://www.imdb.com/title/tt0080856/)")
-
-					with col2:
-						st.image(image11)
-						st.write("[Click to watch](https://www.imdb.com/title/tt0048473/)")
-					with col3:
-						st.image(image12)
-						st.write("[Click to watch](https://www.imdb.com/title/tt0107767/)")
+				with col2:
+					st.image(image11)
+					st.write("[Click to watch](https://www.imdb.com/title/tt0048473/)")
+				with col3:
+					st.image(image12)
+					st.write("[Click to watch](https://www.imdb.com/title/tt0107767/)")
 
 
 if __name__ == '__main__':
